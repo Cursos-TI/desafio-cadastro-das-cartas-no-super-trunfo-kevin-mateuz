@@ -10,7 +10,9 @@ int main(){
     float area1;
     float pib1;
     int n_pturistico1;
-
+    float densidadePopulacional1 = (float) populacao1 / area1 ;
+    float pibPercapita1 = (pib1 * 1e9) / populacao1 ;
+    float power1 = (float)populacao1 + area1 + pib1 + pibPercapita1 + (1 /densidadePopulacional1) + n_pturistico1;
     
 
     char estado2[50];
@@ -19,8 +21,10 @@ int main(){
     int populacao2;
     float area2;
     float pib2;
-    int n_pturistico2;
-    
+    int n_pturistico2= 0;
+    float densidadePopulacional2 = 0;
+    float pibPercapita2= 0 ;
+    float power2= 0 ;
 
     
 
@@ -87,6 +91,9 @@ printf("\n");
 printf("\n");
 printf("\n");
 
+densidadePopulacional1 = (float) populacao1 / area1;
+pibPercapita1 = (pib1 * 1e9) / populacao1;
+power1 = (float)populacao1 + area1 + pib1 + pibPercapita1 + (1 / densidadePopulacional1) + n_pturistico1;
 
 
 printf("\n");
@@ -153,8 +160,9 @@ printf("Finalizamos a Carta 2 . \n");
 printf("\n");
 printf("\n");
 printf("\n");
-
-
+densidadePopulacional2 = (float) populacao2 / area2;
+pibPercapita2 = (pib2 * 1e9) / populacao2;
+power2 = (float)populacao2 + area2 + pib2 + pibPercapita2 + (1 / densidadePopulacional2) + n_pturistico2;
 
 
 
@@ -188,6 +196,8 @@ printf("\n");
 printf("PIB per capita : %.2f reais\n",((pib1 * 1e9) / populacao1));
 
 printf("\n");
+
+printf("Super poder : %.2f POWER \n",((float)populacao1 + area1 + pib1 + pibPercapita1 + (1 /densidadePopulacional1) + n_pturistico1));
 
 printf("\n");
 printf("______________________________________________________________________________ \n");
@@ -224,17 +234,44 @@ printf("\n");
 printf("PIB per capita : %.2f reais\n",((pib2 * 1e9) / populacao2));
 printf("\n");
 
-    
+printf("Super poder : %.2f POWER \n",((float)populacao2 + area2 + pib2 + pibPercapita2 + (1 /densidadePopulacional2) + n_pturistico2));
+
 
 
 printf("\n");
 printf("______________________________________________________________________________ \n");
 
 printf("\n");
+
+
+
+
 printf("\n");
+
+printf("==========================================================================================");
+printf("\n");
+
+printf("------------------------------COMPARAÇÃO ENTRE AS CARTAS---------------------------");
+printf("\n");
+printf("O NÚMERO (1) REPRESENTA A CARTA 1 E O NÚMERO (0) REPRESENTA A CARTA 2 o Número que mais se repetir é o vencedor \n");
+printf("\n");
+
+printf("População : %d \n",(populacao1 > populacao2));
+printf("Área : %d\n",(area1 > area2));
+printf("PIB : %d\n",(pib1 > pib2));
+printf("Pontos turísticos : %d\n",(n_pturistico1 > n_pturistico2));
+printf("Densidade populacional : %d\n",(densidadePopulacional1 < densidadePopulacional2));
+printf("PIB Per Capita : %d\n",pibPercapita1 > pibPercapita2);
+printf("Super poder : %d \n",(power1 > power2));
+
+
+printf("\n");
+printf("==========================================================================================");
+printf("\n");
+
 printf("\n");
 
 
-return 0;
+
 
 }
